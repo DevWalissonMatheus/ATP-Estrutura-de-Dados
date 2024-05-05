@@ -7,7 +7,7 @@ def mergeSort(dados):
         mergeSort(direita)
         i = j = k = 0
         while i<len(esquerda) and j<len(direita):
-            if esquerda[i]<direita[j]:
+            if esquerda[i]>direita[j]:
                 dados[k]=esquerda[i]
                 i=i+1
             else:
@@ -21,4 +21,7 @@ def mergeSort(dados):
         while j<len(direita):
             dados[k]=direita[j]
             j=j+1
-            k=k+1    
+            k=k+1  
+dados = [54, 26, 93, 17, 77, 31, 44, 55]
+mergeSort(dados)
+print(dados)
