@@ -10,16 +10,22 @@ def embaralhaCartas(naipes, numeros):
 
 def compraCartas(cartas):
     while True:
-        qtd_cartas = int(input(('Qual a quantidade de cartas? ')))
-        if qtd_cartas > len(cartas):  # Verifica se há cartas suficientes
-            print(f"Não há cartas suficientes disponíveis.\nRestam {len(cartas)} cartas.")
-            embaralhaCartas(naipes, numeros)  # Reembaralha as cartas
-        else:
-            for _ in range(qtd_cartas):
-                print(cartas.pop())
-        continuar = input('Deseja comprar mais cartas? (s/n): ')
-        if continuar.lower() != 's':
-            break
+        try:
+            qtd_cartas = int(input(('Insira a quantidade de cartas que deseja comprar? ')))
+            if qtd_cartas > len(cartas): 
+                print(f"Não há cartas suficientes disponíveis.\nRestam {len(cartas)} cartas.")
+                embaralhaCartas(naipes, numeros) 
+            else:
+                for _ in range(qtd_cartas):
+                    print(cartas.pop())
+            if not cartas:  
+                print("As cartas acabaram. O jogo foi finalizado.")
+                return
+            continuar = input('Deseja comprar mais cartas? (s/n): ')
+            if continuar.lower() != 's':
+                break
+        except ValueError:
+            print("Por favor, insira um número inteiro válido.")
 
 naipes = ['Ouros', 'Espadas', 'Copas', 'Paus']
 numeros = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
