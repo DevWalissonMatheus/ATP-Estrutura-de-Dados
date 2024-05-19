@@ -16,6 +16,8 @@ class ListaEncadeadaSimples:
         return
     
     def inserirPrioridade(self, nodo):
+        nodo.proximo = self.head
+        self.head = nodo
         return
     
     def inserir(self, dado, cor):
