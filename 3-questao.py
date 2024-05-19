@@ -15,10 +15,21 @@ class ListaEncadeadaSimples:
         nodo_atual.proximo = nodo
         return
     
-    def inserirPrioridade(self, nodo):
-        nodo.proximo = self.head
-        self.head = nodo
-        return
+    def inserirPrioridade(self, nodo): # Cria a função de inserção de prioridade
+        # Se a lista estiver vazia ou se o primeiro nodo for verde
+        if self.head is None or self.head.cor == "V": 
+            # insere o novo nodo no início da lista.
+            nodo.proximo = self.head 
+            self.head = nodo # O novo nodo se torna o primeiro nodo
+        else:
+            # Procura o primeiro nodo na cor verde da lista
+            nodo_atual = self.head # Começa a busca a partir do primeiro nodo
+            while nodo_atual.proximo is not None and nodo_atual.proximo.cor == "A":
+                # Percorre enquanto o nodo for amarelo ou a lista não acabar
+                nodo_atual = nodo_atual.proximo
+            # Insere o novo nodo na frente do primeiro nodo verde
+            nodo.proximo = nodo_atual.proximo
+            nodo_atual.proximo = nodo
     
     def inserir(self, dado, cor):
         nodo = ElementoDaListaSimples(dado, cor)
