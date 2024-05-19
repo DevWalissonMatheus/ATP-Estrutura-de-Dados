@@ -18,7 +18,13 @@ class BST:
                 else:
                     self.direita = BST(dado)
     def folhas(self, lst):
-        return
+        if self.esquerda is None and self.direita is None:
+            lst.append(self.dado)
+        if self.esquerda:
+            self.esquerda.folhas(lst)
+        if self.direita:
+            self.direita.folhas(lst)
+        return lst
 
 Teste = BST()
 Teste.inserir(7)
