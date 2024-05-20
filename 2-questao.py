@@ -1,6 +1,6 @@
 import random # Importa uma biblioteca para embaralhar as cartas de forma aleatória
 # Cria uma função para embaralhar as cartas que 
-# recebe as variáveis naipes e  números
+# recebe as variáveis naipes e números
 def embaralhaCartas(naipes, numeros):
     cartas = [] # Lista vazia para guardar as cartas
     for naipe in naipes: # Cria um loop para os naipes 
