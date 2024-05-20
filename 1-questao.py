@@ -20,8 +20,8 @@ def mergeSort(dados):
                 dados[k]=esquerda[i]
                 i=i+1
             else:
-                # Se o lado esquerdo não for maior, coloca o elemento
-                # da metade direita na posição atual de dados
+                # Se não for maior, coloca o elemento da
+                # metade direita na posição atual de dados
                 dados[k]=direita[j]
                 j=j+1
             # Adiciona os dados
