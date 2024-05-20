@@ -44,9 +44,9 @@ numeros = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'] # Define os números 
 cartas = embaralhaCartas(naipes, numeros) # Embaralha as cartas e armazena na lista cartas
 # Pergunta ao usuário qual modo de jogo deseja
 modo = input('Escolha o modo de jogo:'
-             '\nDigite "1" para escolher a quantidade de cartas' 
-             '\nDigite "2" para comprar 3 cartas por rodada'
-             '\n>> ').strip() # .strip remove espaços em branco do início e do fim da string
+            '\nDigite "1" para escolher a quantidade de cartas' 
+            '\nDigite "2" para comprar 3 cartas por rodada'
+            '\n>> ').strip() # .strip remove espaços em branco do início e do fim da string
 while modo not in ['1', '2']: # Se for inserido algo diferente de 1 ou 2
     # Informa que é um modo inválido e refaz a pergunta
     modo = input('Modo inválido. Escolha "1" ou "2": ').strip()
