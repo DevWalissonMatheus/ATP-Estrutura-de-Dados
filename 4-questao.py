@@ -17,14 +17,24 @@ class BST:
                     self.direita.inserir(dado)
                 else:
                     self.direita = BST(dado)
-    def folhas(self, lst):
-        if self.esquerda is None and self.direita is None:
-            lst.append(self.dado)
-        if self.esquerda:
-            self.esquerda.folhas(lst)
-        if self.direita:
-            self.direita.folhas(lst)
-        return lst
+    def folhas(self, lst): # Cria a função folhas
+        # Verifica se a árvore está vazia
+        if self.dado is None:
+            return lst
+        # Percorre a arvore
+        lstFolhas = [self]
+        while lstFolhas:
+            # Pega o nó do topo da pilha
+            atual = lstFolhas.pop()
+            # Verifica se é uma folha sem filhos
+            if atual.esquerda is None and atual.direita is None:
+                lst.append(atual.dado)
+            # Adiciona os filhos na lista de folhas
+            if atual.direita:
+                lstFolhas.append(atual.direita)
+            if atual.esquerda:
+                lstFolhas.append(atual.esquerda)
+        return lst # Retorna a lista com os valores dos nós
 
 Teste = BST()
 Teste.inserir(7)
